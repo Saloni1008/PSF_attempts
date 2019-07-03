@@ -1,0 +1,5 @@
+range psf 2 0.2 0.4 
+range psf 6 0.2 0.4  
+#range psf 3 -5. -4.
+#range psf 7 175 185
+ 

@@ -1,0 +1,40 @@
+omega     0.260000 
+lambda    0.740000 
+weos      -1.000000 
+hubble    0.720000
+xmin      -2.500000 
+ymin     -2.500000 
+xmax      2.500000 
+ymax      2.500000
+zl   1.01 
+prefix     1 
+pix_ext      0.01
+pix_poi     0.5 
+maxlev   3 
+psfconv_size  0.5 
+flag_extnorm  1 
+
+startup 2 3 0
+lens sie 346.828100 0.011645 0.068408 0.435536 -23.339870 0 0 
+lens pert 3.273000 0.011645 0.068408 0.136942 104.632650 0 0 
+extend sersic 1.010100 5803.709672 0.000000 0.000000 0.456969 -54.143349 0.790859 6.996733 
+extend sersic 3.273000 301.683809 -0.382402 0.313068 0.002318 5.061136 0.637240 8.066472 
+extend point 3.273000 216.709542 -0.384862 0.305181 0 0 0 0 
+psf 0.216489 0.24751 -4.5 6.449048 0.089037 0.22315 31.000700 2.291782 0.053408 
+end_startup 
+
+start_setopt
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0 
+0 1 0 0 0 1 1 1 
+0 1 0 0 0 1 1 1 
+0 1 0 0 0 0 0 0 
+1 1 1 1 1 1 1 1 1 
+end_setopt
+
+start_command 
+readobs_extend /mnt/home/workshop/workshop01/workdir/fitsfiles/data_image.fits
+parprior prior.dat 
+optextend
+writeimage 
+quit
